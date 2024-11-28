@@ -6,10 +6,11 @@ import matplotlib.pyplot as plt
 
 # вычисление эпсилон
 def get_eps(h):
-    return h/5
+    return h / 5
+
 
 def linear_reg(a, b, x):
-    return a+x*b
+    return a + x * b
 
 
 def linear_data(x, a, b):
@@ -40,9 +41,19 @@ df = pd.read_csv("laba1.csv")
 x = df["ob"].tolist()
 y = df["ot"].tolist()
 
-
 a, b = mnk(x, y)
 y_preds = linear_data(x, a, b)
+
+e = [f - p for f, p in zip(y, y_preds)]
+
+e_mean = sum(e) / len(e)
+
+S_e = math.sqrt((1/(len(e)-1)) * sum(math.pow(i-e_mean, 2) for i in e))
+
+RS = (max(e) - min(e)) / S_e
+
+print(RS)
+
 
 plt.ylabel("отклик")
 plt.xlabel("объясняющая")
