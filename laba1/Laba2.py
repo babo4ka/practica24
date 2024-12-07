@@ -62,9 +62,9 @@ plt.xlim(-25, 10) # Устанавливаем диапазон для оси X
 plt.ylim(-25, 10) # Устанавливаем диапазон для оси Y
 
 # Настройка графика
-plt.title('Распределение данных по кластерам (метод ближних соседей)', fontsize=16)
-plt.xlabel('X', fontsize=14)
-plt.ylabel('Y', fontsize=14)
-plt.legend(fontsize=12)
+plt.title('Распределение данных по кластерам (метод ближних соседей)')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.legend()
 plt.grid()
 plt.show()
