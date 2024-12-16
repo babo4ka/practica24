@@ -42,6 +42,11 @@ dw_stat = sm.stats.durbin_watson(model.resid)
 # Проверка на гомоскедастичность (Breusch-Pagan)
 bp_test = het_breuschpagan(model.resid, model.model.exog)
 
+# Вывод результатов
+print(f'Коэффициенты регрессии: a = {a:.2f}, b = {b:.2f}')
+print(f'Статистика Дурбина-Уотсона: {dw_stat:.2f}')
+print(f'Результат теста Бреуша-Пагана: p-значение = {bp_test[1]:.3f}')
+
 # Построение графика
 plt.figure(figsize=(10, 6))
 plt.scatter(x, y, color='blue', label='Данные', s=20)
@@ -54,7 +59,3 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-# Вывод результатов
-print(f'Коэффициенты регрессии: a = {a:.2f}, b = {b:.2f}')
-print(f'Статистика Дурбина-Уотсона: {dw_stat:.2f}')
-print(f'Результат теста Бреуша-Пагана: p-значение = {bp_test[1]:.3f}')

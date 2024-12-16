@@ -67,7 +67,7 @@ for i in range(k):
     plt.scatter(cluster_points[:, 0], cluster_points[:, 1], c=colors[i], label=f'Кластер {i + 1}')
 
 # Отображение центров кластеров
-plt.scatter(final_centroids[:, 0], final_centroids[:, 1], c='black', marker='x', s=100, label='Центры кластеров')
+plt.scatter(final_centroids[:, 0], final_centroids[:, 1], c='black', marker='x', s=100, label='Центроиды')
 plt.title('Результаты кластеризации методом K-средних')
 plt.xlabel('X')
 plt.ylabel('Y')
